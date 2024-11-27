@@ -22,3 +22,4 @@ class LoginLocators:
     INPUT_EMAIL = By.NAME, "name"
     INPUT_PASSWORD = By.NAME, "Пароль"
     BUTTON_LOGIN = By.XPATH, ".//button[text()='Войти']"
+

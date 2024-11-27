@@ -1,26 +1,23 @@
 import pytest
 import allure
 import requests
-
 from selenium import webdriver
 
+import data
 from data import URL
 from helpers import Generators
 
-DRIVER_TYPE = None
 
-
-@pytest.fixture(params=["firefox"], scope="function")
+@pytest.fixture(params=["chrome", "firefox"], scope="function")
 def driver(request):
     if request.param == "chrome":
         with allure.step("Запускаю тест на браузере Chrome"):
-            DRIVER_TYPE = "chrome"
+            data.DRIVER_TYPE = "chrome"
             driver = webdriver.Chrome()
     else:
         with allure.step("Запускаю тест на браузере firefox"):
-            DRIVER_TYPE = "firefox"
+            data.DRIVER_TYPE = "firefox"
             driver = webdriver.Firefox()
-
     yield driver
     driver.quit()
 
