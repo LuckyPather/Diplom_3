@@ -3,7 +3,7 @@ import pytest
 
 from pages.main_functional import MainFunctional
 from pages.locators import MainFunctionalLocators
-from data import URL, STANDART_VALUE_ORDER
+from data import URL, STANDARD_VALUE_ORDER
 
 
 @allure.suite("Основной функционал")
@@ -45,4 +45,4 @@ class TestMainFunctional:
     @allure.title("Залогиненный пользователь может оформить заказ")
     def test_create_order(self, driver, create_user, delete_user):
         result = MainFunctional(driver).create_order(create_user[0], create_user[1])
-        assert result != STANDART_VALUE_ORDER
+        assert result != STANDARD_VALUE_ORDER

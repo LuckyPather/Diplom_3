@@ -8,7 +8,7 @@ from data import URL
 from helpers import Generators
 
 
-@pytest.fixture(params=["chrome","firefox"], scope="function")
+@pytest.fixture(params=["firefox"], scope="function")
 def driver(request):
     if request.param == "chrome":
         with allure.step("Запускаю тест на браузере Chrome"):

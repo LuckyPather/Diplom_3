@@ -36,3 +36,9 @@ class MainFunctionalLocators:
     COUNTER = By.CLASS_NAME, 'counter_counter__num__3nue1'
     WINDOW_ORDER_NUMBER = By.CLASS_NAME, 'Modal_modal__title_shadow__3ikwq'
     BUTTON_CREATE_ORDER = By.XPATH, ".//button[text()='Оформить заказ']"
+
+
+class FeedOrderLocator:
+    ORDERS_LIST = By.CLASS_NAME, 'OrderHistory_listItem__2x95r'
+    ORDER_DETAILS = By.CLASS_NAME, 'Modal_modal_opened__3ISw4'
+    ORDERS_LIST_NUMBER = By.CLASS_NAME, 'text_type_digits-default'

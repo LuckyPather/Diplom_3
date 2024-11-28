@@ -14,4 +14,6 @@ class URL:
     API_USER_DELETE = "/api/auth/user"
 
 
-STANDART_VALUE_ORDER = "9999"
+STANDARD_VALUE_ORDER = "9999"
+
+USER_WITH_ORDERS = ['kuznecov9900@gmail.com', 'Travel145!']
