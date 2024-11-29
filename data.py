@@ -17,3 +17,5 @@ class URL:
 STANDARD_VALUE_ORDER = "9999"
 
 USER_WITH_ORDERS = ['kuznecov9900@gmail.com', 'Travel145!']
+
+SUCCESS_STATUS_ORDER = "Все текущие заказы готовы!"

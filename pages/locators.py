@@ -42,3 +42,6 @@ class FeedOrderLocator:
     ORDERS_LIST = By.CLASS_NAME, 'OrderHistory_listItem__2x95r'
     ORDER_DETAILS = By.CLASS_NAME, 'Modal_modal_opened__3ISw4'
     ORDERS_LIST_NUMBER = By.CLASS_NAME, 'text_type_digits-default'
+    ORDER_STATUS = By.CLASS_NAME, "OrderFeed_orderListReady__1YFem"
+    ORDER_COUNTERS = By.CLASS_NAME, "OrderFeed_number__2MbrQ"
+    ORDER_IN_STATUS_COMPLETE = By.CLASS_NAME, 'OrderFeed_orderList__cBvyi'
