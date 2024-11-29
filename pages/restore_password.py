@@ -1,6 +1,6 @@
 import allure
 from .base_page import BasePage
-from .locators import RestorePasswordLocators, OVERLAY_MODAL_WINDOW_CLOSE
+from .locators import RestorePasswordLocators
 from data import URL
 
 
@@ -8,8 +8,6 @@ class RestorePassword(BasePage):
     def redirect_from_button(self):
         with allure.step("Открываю страницу входа в аккаунт"):
             self.driver.get(f"{URL.MAIN}{URL.LOGIN}")
-        with allure.step("Закрываю модальное окно"):
-            self.move_to_element_and_click(OVERLAY_MODAL_WINDOW_CLOSE)
         with allure.step("Нажимаю на кнопку восстановления пароля"):
             self.click_to_element(RestorePasswordLocators.LINK_RESTORE_PASSWORD)
         url = self.get_url(f"{URL.MAIN}{URL.FORGOT_PASSWORD}")
@@ -20,8 +18,6 @@ class RestorePassword(BasePage):
             self.driver.get(f"{URL.MAIN}{URL.RESET_PASSWORD}")
         with allure.step("Ввожу email в поле восстановления email"):
             self.send_keys(RestorePasswordLocators.INPUT_EMAIL, "test@mai.com")
-        with allure.step("Закрываю модальное окно"):
-            self.move_to_element_and_click(OVERLAY_MODAL_WINDOW_CLOSE)
         with allure.step("Нажимаю на кнопку 'Восстановить'"):
             self.click_to_element(RestorePasswordLocators.BUTTON_RESTORE_PASSWORD)
         url = self.get_url(f"{URL.MAIN}{URL.RESET_PASSWORD}")
@@ -31,12 +27,8 @@ class RestorePassword(BasePage):
         with allure.step("Перехожу на страницу сброса пароля"):
             self.driver.get(f"{URL.MAIN}{URL.RESET_PASSWORD}")
             self.send_keys(RestorePasswordLocators.INPUT_EMAIL, "test@mai.com")
-            with allure.step("Закрываю модальное окно"):
-                self.move_to_element_and_click(OVERLAY_MODAL_WINDOW_CLOSE)
             self.click_to_element(RestorePasswordLocators.BUTTON_RESTORE_PASSWORD)
         with allure.step("Нажимаю на поле ввода пароля"):
-            with allure.step("Закрываю модальное окно"):
-                self.move_to_element_and_click(OVERLAY_MODAL_WINDOW_CLOSE)
             self.click_to_element(RestorePasswordLocators.INPUT_ICON)
         with allure.step("Проверяю, что поменялся класс поля и по нему можно найти элемент"):
             try:
